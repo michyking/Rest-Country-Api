@@ -1,0 +1,243 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-background: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--very-light-gray);
+  color: var(--very-dark-blue-text);
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  align-items: center;
+  box-shadow: 1px 1px 1px hsla(0, 0%, 52%, 0.2);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  height: 70px;
+}
+
+.bx {
+  margin-right: 6px;
+}
+
+/* dark mode icon  */
+
+.toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+/* the search  */
+
+.search {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  padding: 17px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px hsla(0, 0%, 52%, 0.2);
+}
+
+.search-items input {
+  border: none;
+  outline: none;
+  width: 250px;
+  background: none;
+}
+
+/* the drop down  */
+
+.dropdown {
+  background-color: var(--white);
+  cursor: pointer;
+  width: 160px;
+  padding: 17px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px hsla(0, 0%, 52%, 0.2);
+}
+
+.drop-options {
+  width: 160px;
+  margin-top: 5px;
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 17px 15px;
+  box-shadow: 1px 1px 4px hsla(0, 0%, 52%, 0.2);
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+
+.show-drop-down {
+  visibility: visible;
+}
+
+/* The main content stylying */
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  /* position: relative; */
+}
+
+.country {
+  width: 280px;
+  min-height: 300px;
+  box-shadow: 1px 1px 3px hsla(0, 0%, 52%, 0.2);
+  border-radius: 5px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.country-flag {
+  width: 280px;
+}
+
+.country-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.country-details {
+  padding: 30px;
+}
+
+.country-details h4 {
+  padding-bottom: 15px;
+}
+
+.country-details p {
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.country-details p span {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+/* The pop up details  */
+
+/* .the-details{
+  background-color: var(--very-light-gray);
+} */
+
+.each-country-details {
+  position: sticky;
+  /* check for this bottom later  */
+  bottom: 0;
+  width: 100%;
+  height: 90vh;
+  background-color: inherit;
+  font-size: 16px;
+}
+
+.btn2 {
+  margin: 60px 120px 50px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 3px 4px hsla(0, 0%, 52%, 0.2);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.main-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 120px;
+}
+
+.details-img img {
+  width: 500px;
+  height: 80%;
+  box-shadow: 1px 3px 4px hsla(0, 0%, 52%, 0.2);
+  border-radius: 4px;
+}
+
+.flex-am {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.details-text h3 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.details-text p{
+  margin-bottom: 7px;
+   font-size: 16px;
+  font-weight: 600;
+}
+
+.details-text p span{
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.details-text .border {
+  margin-top: 30px;
+}
+
+
+
+/* - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
+
+/* specification for dark mode  */
+
+.dark-mode {
+  background-color: var(--very-dark-blue-background);
+  color: var(--white);
+}
+
+.dark-mode-elements {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
